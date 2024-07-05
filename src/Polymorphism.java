@@ -1,3 +1,4 @@
+package src;
 
 // Animal.java (Base class for polymorphism)
 class Animal {

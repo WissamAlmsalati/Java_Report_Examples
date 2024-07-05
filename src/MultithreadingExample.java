@@ -1,4 +1,6 @@
 // Multithreading Example
+package src;
+
 public class MultithreadingExample {
     
     // Example Runnable task

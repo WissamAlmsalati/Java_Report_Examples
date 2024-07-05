@@ -1,3 +1,5 @@
+package src;
+ 
  class Employee {
     private String name;
     private double salary;

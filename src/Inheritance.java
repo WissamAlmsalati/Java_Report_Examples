@@ -1,4 +1,6 @@
 // Vehicle.java (Parent class for inheritance)
+package src;
+
 class Vehicle {
     void drive() {
         System.out.println("Vehicle is driving");
