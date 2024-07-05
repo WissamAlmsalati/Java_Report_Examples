@@ -1,14 +1,15 @@
 package src;
 
-
 import java.sql.*;
 
-public class DatabaseExample {
+public class CRUDExample {
+
+    // JDBC URL, username and password of SQLite database
     private static final String URL = "jdbc:sqlite:students.db";
 
     public static void main(String[] args) {
         try {
-            // Explicitly load the SQLite JDBC driver
+            // Explicitly load the SQLite JDBC driver to ensure it is available
             Class.forName("org.sqlite.JDBC");
         } catch (ClassNotFoundException e) {
             System.out.println("SQLite JDBC driver not found: " + e.getMessage());
@@ -20,7 +21,7 @@ public class DatabaseExample {
     
         // Insert example data
         Student student1 = new Student(1, "John Doe", "john@example.com");
-        insertData(student1);
+        insertStudent(student1);
     
         // Retrieve and print all students
         System.out.println("List of students:");
@@ -58,7 +59,7 @@ public class DatabaseExample {
         }
     }
 
-    private static void insertData(Student student) {
+    private static void insertStudent(Student student) {
         String sql = "INSERT INTO students(id, name, email) VALUES(?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL);
@@ -118,6 +119,7 @@ public class DatabaseExample {
         }
     }
 
+    // Student class representing the entity
     static class Student {
         private int id;
         private String name;
